@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IndoorSearchActivity">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/seach_ll"
+        android:orientation="horizontal" >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/search"/>
+
+        <EditText
+            android:id="@+id/indoorsearch_content_et"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:layout_height="40dp"
+            android:hint="在当前室内搜索" >
+
+            <!--<requestFocus />-->
+        </EditText>
+        <View
+            android:layout_width="1px"
+            android:layout_height="30dp"
+            android:background="#9C9C9C"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/indoorsearch_search_tv"
+            android:layout_width="60dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="搜索" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/indoorRoutePlane"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/seach_ll"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="室内路线规划" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/seach_ll"
+        android:layout_weight="1"
+        android:id="@+id/viewStub">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/circleshape"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/indoorsearch_path_bt"
+            android:layout_marginBottom="40dp"
+            android:visibility="gone"
+            android:text="路线" />
+
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/indoorsearch_rv">
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/pre"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="2dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/pre_"
+            android:onClick="nodeClick"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="2dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/next_"
+            android:onClick="nodeClick"
+            tools:ignore="OnClick" />
+    </LinearLayout>
+</RelativeLayout>
